@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakina | سكينة</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Style -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <span data-i18n="top.bar">✨ شحن مجاني للطلبات لأكثر من 2000 ج.م | جميع المقاسات FREE SIZE ✨</span>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Sakina">
+      </a>
+
+      <nav>
+        <ul class="main-nav">
+          <li><a href="index.html" class="active" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="isdal.html" data-i18n="nav.isdal">الإسدال</a></li>
+          <li><a href="pajamas.html" data-i18n="nav.pajamas">البيجامات</a></li>
+          <li><a href="abayas.html" data-i18n="nav.abayas">العبايات</a></li>
+          <!-- <li><a href="dresses.html" data-i18n="nav.dresses">الفساتين</a></li> -->
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn lang-btn" id="langToggle">EN</button>
+        <button class="icon-btn" id="themeToggle"><i class="fa-regular fa-moon"></i></button>
+        <button class="icon-btn cart-btn" id="cartOpen">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartBadge">0</span>
+        </button>
+        <button class="icon-btn menu-btn" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" class="active" data-i18n="nav.home">الرئيسية</a>
+      <a href="isdal.html" data-i18n="nav.isdal">الإسدال</a>
+      <a href="pajamas.html" data-i18n="nav.pajamas">البيجامات</a>
+      <a href="abayas.html" data-i18n="nav.abayas">العبايات</a>
+      <!-- <a href="dresses.html" data-i18n="nav.dresses">الفساتين</a> -->
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Banner Section -->
+    <section class="hero">
+      <div class="wrap hero-inner">
+        <div class="hero-content">
+          <span class="hero-badge" data-i18n="hero.badge">تشكيلة الستان الجديدة</span>
+          <h1 data-i18n="hero.title">أناقة وراحة تدوم في كل لحظة</h1>
+          <p data-i18n="hero.p">تصاميم من الستان الأرماني الناعم المريح. متوفر بمقاسات Free Size وتفصيل مخصص لكل قطعة بكل حب.</p>
+          <div class="hero-actions">
+            <a href="pajamas.html" class="btn btn-main" data-i18n="hero.ctaPajamas">تسوقي البيجامات</a>
+            <a href="isdal.html" class="btn btn-outline" data-i18n="hero.ctaIsdal">استكشفي الإسدال</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <div class="img-frame">
+            <img src="images/hero.png" alt="Sakina Collection">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="section">
+      <div class="wrap">
+        <div class="section-title">
+          <h2 data-i18n="cat.title">أقسام المجموعة</h2>
+          <p data-i18n="cat.subtitle">اختاري من تشكيلتنا المصممة خصيصاً لكِ</p>
+        </div>
+
+        <div class="cat-grid">
+          <a href="isdal.html" class="cat-card">
+            <div class="cat-img"><img src="images/isdal/id20.jfif" alt="Isdal" onerror="this.src='https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?q=80&w=600'"></div>
+            <div class="cat-card-body">
+              <h3 data-i18n="nav.isdal">الإسدال</h3>
+              <p data-i18n="cat.isdalDesc">خامة ستان أرماني مريحة جداً ✨</p>
+              <span class="cat-link" data-i18n="cat.browse">تصفحي المنتجات ←</span>
+            </div>
+          </a>
+
+          <a href="pajamas.html" class="cat-card">
+            <div class="cat-img"><img src="images/pajamas/shared image (6).jfif" alt="Pajamas"></div>
+            <div class="cat-card-body">
+              <h3 data-i18n="nav.pajamas">البيجامات</h3>
+              <p data-i18n="cat.pajamasDesc">تصاميم ناعمة ومريحة للنوم والاسترخاء</p>
+              <span class="cat-link" data-i18n="cat.browse">تصفحي المنتجات ←</span>
+            </div>
+          </a>
+
+          <a href="abayas.html" class="cat-card">
+            <div class="cat-img"><img src="images/neww.png" alt="Abayas" onerror="this.src='https://images.unsplash.com/photo-1563178406-4cdc2923acbc?q=80&w=600'"></div>
+            <div class="cat-card-body">
+              <h3 data-i18n="nav.abayas">العبايات</h3>
+              <p data-i18n="cat.abayasDesc">قصات راقية مع اهتمام بأدق التفاصيل</p>
+              <span class="cat-link" data-i18n="cat.browse">تصفحي المنتجات ←</span>
+            </div>
+          </a>
+
+          <!--<a href="dresses.html" class="cat-card">
+            <div class="cat-img"><img src="images/dresses/fs1.jpg" alt="Dresses" onerror="this.src='https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=600'"></div>
+            <div class="cat-card-body">
+              <h3 data-i18n="nav.dresses">الفساتين</h3>
+              <p data-i18n="cat.dressesDesc">فساتين أنيقة لكل المناسبات</p>
+              <span class="cat-link" data-i18n="cat.browse">تصفحي المنتجات ←</span>
+            </div>
+          </a>-->
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Order Banner -->
+    <section class="section wrap">
+      <div class="contact-box">
+        <h2 data-i18n="contact.title">طلب تفصيل بمقاس خاص؟</h2>
+        <p data-i18n="contact.desc">يمكنك التواصل معنا عبر الواتساب لتأكيد المقاسات والتعديلات الخاصة بطلبك.</p>
+        <a href="https://wa.me/201019712312" target="_blank" class="btn btn-main">
+          <i class="fa-brands fa-whatsapp"></i> <span data-i18n="contact.btn">تواصل عبر الواتساب</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Sakina"></a>
+        <p data-i18n="footer.about">سكينة — أزياء نسائية مريحة وأنيقة صُنعت بحب لأجمل جميلات.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.quickLinks">روابط سريعة</h5>
+        <ul>
+          <li><a href="isdal.html" data-i18n="nav.isdal">الإسدال</a></li>
+          <li><a href="pajamas.html" data-i18n="nav.pajamas">البيجامات</a></li>
+          <li><a href="abayas.html" data-i18n="nav.abayas">العبايات</a></li>
+          <!-- <li><a href="dresses.html" data-i18n="nav.dresses">الفساتين</a></li> -->
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.contactUs">تواصل معنا</h5>
+        <ul>
+          <li><a href="https://wa.me/201019712312" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom wrap">
+      <p>&copy; 2026 Sakina. All rights reserved. Made with love 🏷️🧵🎀</p>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-head">
+      <h4 data-i18n="cart.title">سلة التسوق</h4>
+      <button class="icon-btn" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-foot">
+      <div class="cart-total">
+        <span data-i18n="cart.total">الإجمالي:</span>
+        <span id="cartTotal">0 ج.م</span>
+      </div>
+      <button class="btn btn-main full-btn" id="whatsappCheckoutBtn">
+        <i class="fa-brands fa-whatsapp"></i> <span data-i18n="cart.checkout">إتمام الطلب عبر الواتساب</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMsg">تم الإضافة للسلة</span>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

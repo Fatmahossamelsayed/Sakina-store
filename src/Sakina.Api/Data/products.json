@@ -1,0 +1,413 @@
+[
+  {
+    "category": "abayas",
+    "title": "قفطان كتان - أزرق",
+    "titleEn": "Linen Kaftan - Blue",
+    "price": 950,
+    "images": [
+      "images/abayas/ab1.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "abayas",
+    "title": "قفطان كتان - زيتي",
+    "titleEn": "Linen Kaftan - Olive",
+    "price": 950,
+    "images": [
+      "images/abayas/ab2.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "abayas",
+    "title": "قفطان كريب - أسود",
+    "titleEn": "Crepe Kaftan - Black",
+    "price": 1000,
+    "images": [
+      "images/abayas/ab3.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "abayas",
+    "title": "عباية جاكار - أسود",
+    "titleEn": "Jacquard Abaya - Black",
+    "price": 1500,
+    "images": [
+      "images/abayas/ab4.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "abayas",
+    "title": "عباية تيك توك جاكار - اسود",
+    "titleEn": "TikTok Jacquard Abaya - Black",
+    "price": 1200,
+    "images": [
+      "images/abayas/ab5.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "pajamas",
+    "title": "بيجامة ستان ارماني - طوبي",
+    "titleEn": "Armani Satin Pajama - Brick Red",
+    "price": 650,
+    "images": [
+      "images/pajamas/pj1.jfif",
+      "images/pajamas/pj11.jpg"
+    ],
+    "tag": "new",
+    "tagName": "وصل حديثاً",
+    "tagNameEn": "New Arrival"
+  },
+  {
+    "category": "pajamas",
+    "title": "بيجامة ستان أرماني - لبني",
+    "titleEn": "Armani Satin Pajama - Blue",
+    "price": 650,
+    "images": [
+      "images/pajamas/pj2.jfif",
+      "images/pajamas/pj22.jpg",
+      "images/pajamas/pj222.jpg",
+      "images/pajamas/pj2222.jpg"
+    ],
+    "tag": "new",
+    "tagName": "وصل حديثاً",
+    "tagNameEn": "New Arrival"
+  },
+  {
+    "category": "pajamas",
+    "title": "بيجامة ستان ارماني - موف",
+    "titleEn": "Armani Satin Pajama - purple",
+    "price": 650,
+    "images": [
+      "images/pajamas/pj3.jfif",
+      "images/pajamas/pj3333.jpg",
+      "images/pajamas/pj33.jfif"
+    ],
+    "tag": "new",
+    "tagName": "وصل حديثاً",
+    "tagNameEn": "New Arrival"
+  },
+  {
+    "category": "pajamas",
+    "title": "بيجامة ستان أرماني - لبني",
+    "titleEn": "Armani Satin Pajama - Blue",
+    "price": 750,
+    "images": [
+      "images/pajamas/pj4.jfif",
+      "images/pajamas/pj44.jfif",
+      "images/pajamas/pj444.jfif"
+    ],
+    "tag": "limited",
+    "tagName": "كمية محدودة",
+    "tagNameEn": "Limited Edition"
+  },
+  {
+    "category": "pajamas",
+    "title": "بيجامة ستان أرماني - بينك",
+    "titleEn": "Armani Satin Pajama - Pink",
+    "price": 750,
+    "images": [
+      "images/pajamas/pj5.jfif"
+    ],
+    "tag": "limited",
+    "tagName": "كمية محدودة",
+    "tagNameEn": "Limited Edition"
+  },
+  {
+    "category": "pajamas",
+    "title": "بيجامة ستان أرماني - اخضر",
+    "titleEn": "Armani Satin Pajama - Mint Green",
+    "price": 750,
+    "images": [
+      "images/pajamas/pj6.jfif"
+    ],
+    "tag": "limited",
+    "tagName": "كمية محدودة",
+    "tagNameEn": "Limited Edition"
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id1.jfif",
+      "images/isdal/id1(1).jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id2.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id3.jfif",
+      "images/isdal/id33.jfif",
+      "images/isdal/id333.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id4.jfif",
+      "images/isdal/Media (11).jfif",
+      "images/isdal/Media (12).jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id5.jpg"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id6.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id7.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id8.png"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id9.png"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 700,
+    "images": [
+      "images/isdal/id10.png"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 750,
+    "images": [
+      "images/isdal/id11.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 750,
+    "images": [
+      "images/isdal/id12.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id13.png"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id14.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id15.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id16.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id17.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id18.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id19.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id20.jfif"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 650,
+    "images": [
+      "images/isdal/id21.png"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  },
+  {
+    "category": "isdal",
+    "title": "إسدال ستان أرماني",
+    "titleEn": "Armani Satin Isdal",
+    "price": 700,
+    "images": [
+      "images/isdal/id22.jpeg",
+      "images/isdal/shared image (11).jpeg",
+      "images/isdal/shared image.jpeg"
+    ],
+    "tag": null,
+    "tagName": null,
+    "tagNameEn": null
+  }
+]

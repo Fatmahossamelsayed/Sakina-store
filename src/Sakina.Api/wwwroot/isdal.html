@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الإسدال — Sakina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-category="isdal">
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <span data-i18n="top.bar">✨ شحن مجاني للطلبات لأكثر من 2000 ج.م | جميع المقاسات FREE SIZE ✨</span>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Sakina">
+      </a>
+
+      <nav>
+        <ul class="main-nav">
+          <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="isdal.html" class="active" data-i18n="nav.isdal">الإسدال</a></li>
+          <li><a href="pajamas.html" data-i18n="nav.pajamas">البيجامات</a></li>
+          <li><a href="abayas.html" data-i18n="nav.abayas">العبايات</a></li>
+          <!-- <li><a href="dresses.html" data-i18n="nav.dresses">الفساتين</a></li> -->
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="icon-btn lang-btn" id="langToggle">EN</button>
+        <button class="icon-btn" id="themeToggle"><i class="fa-regular fa-moon"></i></button>
+        <button class="icon-btn cart-btn" id="cartOpen">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartBadge">0</span>
+        </button>
+        <button class="icon-btn menu-btn" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+      <a href="isdal.html" class="active" data-i18n="nav.isdal">الإسدال</a>
+      <a href="pajamas.html" data-i18n="nav.pajamas">البيجامات</a>
+      <a href="abayas.html" data-i18n="nav.abayas">العبايات</a>
+      <!-- <a href="dresses.html" data-i18n="nav.dresses">الفساتين</a> -->
+    </div>
+  </header>
+
+  <main class="section wrap">
+    <div class="section-title">
+      <h2 data-i18n="nav.isdal">تشكيلة الإسدال</h2>
+      <p data-i18n="cat.isdalDesc">خامة ستان أرماني مريحة جداً ✨ — مقاسات FREE SIZE</p>
+    </div>
+
+    <!-- Size Banner -->
+    <div class="size-banner">
+      <i class="fa-solid fa-wand-magic-sparkles"></i>
+      <span data-i18n="size.note">جميع المقاسات FREE SIZE ✨ - Made with love for the most beautiful lady 🏷️🧵🎀 (تتوفر إمكانية تفصيل مقاسك الخاص عبر الواتساب او لو عايزه ديزاين علي زوقك 😉)</span>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <div class="chip-group" id="filterChips">
+        <button class="chip active" data-filter="all" data-i18n="filter.all">الكل</button>
+        <button class="chip" data-filter="bestseller" data-i18n="filter.bestseller">الأكثر مبيعاً</button>
+        <button class="chip" data-filter="new" data-i18n="filter.new">وصل حديثاً</button>
+        <button class="chip" data-filter="limited" data-i18n="filter.limited">كمية محدودة</button>
+      </div>
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="بحث..." data-i18n-ph="filter.searchPh">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="products-grid" id="productsGrid">
+      <!-- Products loaded via JS -->
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Sakina"></a>
+        <p data-i18n="footer.about">سكينة — أزياء نسائية مريحة وأنيقة صُنعت بحب لأجمل جميلات.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.quickLinks">روابط سريعة</h5>
+        <ul>
+          <li><a href="isdal.html" data-i18n="nav.isdal">الإسدال</a></li>
+          <li><a href="pajamas.html" data-i18n="nav.pajamas">البيجامات</a></li>
+          <li><a href="abayas.html" data-i18n="nav.abayas">العبايات</a></li>
+          <!-- <li><a href="dresses.html" data-i18n="nav.dresses">الفساتين</a></li> -->
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.contactUs">تواصل معنا</h5>
+        <ul>
+          <li><a href="https://wa.me/201019712312" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom wrap">
+      <p>&copy; 2026 Sakina. All rights reserved. Made with love 🏷️🧵🎀</p>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-head">
+      <h4 data-i18n="cart.title">سلة التسوق</h4>
+      <button class="icon-btn" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-foot">
+      <div class="cart-total">
+        <span data-i18n="cart.total">الإجمالي:</span>
+        <span id="cartTotal">0 ج.م</span>
+      </div>
+      <button class="btn btn-main" style="width: 100%; justify-content: center;" id="whatsappCheckoutBtn">
+        <i class="fa-brands fa-whatsapp"></i> <span data-i18n="cart.checkout">إتمام الطلب عبر الواتساب</span>
+      </button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMsg">تم إضافة المنتج للسلة</span>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

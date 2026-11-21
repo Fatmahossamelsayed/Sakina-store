@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sakina | Product Details</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .product-detail-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 30px;
+      align-items: start;
+    }
+    .product-media-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .main-image-box {
+      width: fit-content;
+      max-width: 100%;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+      background: var(--accent);
+    }
+    .product-large-img {
+      display: block;
+      max-width: 100%;
+      max-height: 520px;
+      width: auto;
+      height: auto;
+    }
+    .thumbnails-box {
+      display: flex;
+      gap: 12px;
+      margin-top: 15px;
+    }
+    .thumb-img {
+      width: 80px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: var(--transition);
+    }
+    .thumb-img.active, .thumb-img:hover {
+      border-color: var(--primary);
+    }
+    .product-info-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+    .back-btn:hover { color: var(--primary); }
+    @media (max-width: 768px) {
+      .product-detail-container { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <span data-i18n="top.bar">✨ شحن مجاني للطلبات لأكثر من 2000 ج.م | جميع المقاسات FREE SIZE ✨</span>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Sakina">
+      </a>
+      <nav>
+        <ul class="main-nav">
+          <li><a href="index.html" data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="isdal.html" data-i18n="nav.isdal">الإسدال</a></li>
+          <li><a href="pajamas.html" data-i18n="nav.pajamas">البيجامات</a></li>
+          <li><a href="abayas.html" data-i18n="nav.abayas">العبايات</a></li>
+          <!-- <li><a href="dresses.html" data-i18n="nav.dresses">الفساتين</a></li> -->
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn lang-btn" id="langToggle">EN</button>
+        <button class="icon-btn" id="themeToggle"><i class="fa-regular fa-moon"></i></button>
+        <button class="icon-btn cart-btn" id="cartOpen">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-count" id="cartBadge">0</span>
+        </button>
+        <button class="icon-btn menu-btn" id="menuToggle"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html" data-i18n="nav.home">الرئيسية</a>
+      <a href="isdal.html" data-i18n="nav.isdal">الإسدال</a>
+      <a href="pajamas.html" data-i18n="nav.pajamas">البيجامات</a>
+      <a href="abayas.html" data-i18n="nav.abayas">العبايات</a>
+      <!-- <a href="dresses.html" data-i18n="nav.dresses">الفساتين</a> -->
+    </div>
+  </header>
+
+  <main class="section wrap">
+    <a href="javascript:history.back()" class="back-btn" id="backBtn">
+      <i class="fa-solid fa-arrow-right"></i> <span id="backTxt">العودة للمنتجات</span>
+    </a>
+    
+    <div id="productDetailContent"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="images/logo.png" alt="Sakina"></a>
+        <p data-i18n="footer.about">سكينة — أزياء نسائية مريحة وأنيقة صُنعت بحب لأجمل جميلات.</p>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.quickLinks">روابط سريعة</h5>
+        <ul>
+          <li><a href="isdal.html" data-i18n="nav.isdal">الإسدال</a></li>
+          <li><a href="pajamas.html" data-i18n="nav.pajamas">البيجامات</a></li>
+          <li><a href="abayas.html" data-i18n="nav.abayas">العبايات</a></li>
+          <!-- <li><a href="dresses.html" data-i18n="nav.dresses">الفساتين</a></li> -->
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.contactUs">تواصل معنا</h5>
+        <ul>
+          <li><a href="https://wa.me/201019712312" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom wrap">
+      <p>&copy; 2026 Sakina. All rights reserved. Made with love 🏷️🧵🎀</p>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-head">
+      <h4 data-i18n="cart.title">سلة التسوق</h4>
+      <button class="icon-btn" id="cartClose"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-body" id="cartBody"></div>
+    <div class="cart-foot">
+      <div class="cart-total">
+        <span data-i18n="cart.total">الإجمالي:</span>
+        <span id="cartTotal">0 ج.م</span>
+      </div>
+      <button class="btn btn-main full-btn" id="whatsappCheckoutBtn">
+        <i class="fa-brands fa-whatsapp"></i> <span data-i18n="cart.checkout">إتمام الطلب عبر الواتساب</span>
+      </button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast">
+    <i class="fa-solid fa-check-circle"></i>
+    <span id="toastMsg">تم الإضافة للسلة</span>
+  </div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    window.addEventListener('products:loaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      const productId = parseInt(params.get('id'));
+      const container = document.getElementById('productDetailContent');
+      const lang = localStorage.getItem('sakina_lang') || 'ar';
+
+      // ترجمة زر الرجوع
+      document.getElementById('backTxt').textContent = lang === 'en' ? 'Back to products' : 'العودة للمنتجات';
+
+      if (productId && typeof products !== 'undefined') {
+        const product = products.find(p => p.id === productId);
+        if (product && container) {
+          const title = lang === 'en' && product.titleEn ? product.titleEn : product.title;
+          const currency = lang === 'en' ? 'EGP' : 'ج.م';
+          const sizeNote = lang === 'en' 
+            ? 'All sizes are FREE SIZE ✨ (Custom size tailoring via WhatsApp)' 
+            : 'جميع المقاسات FREE SIZE ✨ (تتوفر إمكانية تفصيل مقاسك الخاص عبر الواتساب او لو عايزه ديزاين علي زوقك 😉)';
+          const desc = lang === 'en'
+            ? 'High quality and very comfortable fabric. Designed with love to suit your elegant look at all times.'
+            : 'خامة عالية الجودة ومريحة جداً. صُممت بحب لتناسب إطلالتك الأنيقة في كل الأوقات.';
+          const addBtn = lang === 'en' ? 'Add to Cart' : 'إضافة للسلة';
+
+          // تجهيز الصور: الصورة الأساسية + أي صور إضافية (image2, image3, image4, ...) بدون حد أقصى
+          const images = [product.image];
+          let extraIdx = 2;
+          while (product[`image${extraIdx}`]) {
+            images.push(product[`image${extraIdx}`]);
+            extraIdx++;
+          }
+
+          let thumbnailsHTML = '';
+          if (images.length > 1) {
+            thumbnailsHTML = `<div class="thumbnails-box">
+              ${images.map((img, idx) => `
+                <img src="${img}" class="thumb-img ${idx === 0 ? 'active' : ''}" onclick="changeMainImage('${img}', this)">
+              `).join('')}
+            </div>`;
+          }
+
+          container.innerHTML = `
+            <div class="product-detail-container">
+              <div class="product-media-box">
+                <div class="main-image-box">
+                  <img src="${images[0]}" alt="${title}" id="mainProductImg" class="product-large-img">
+                </div>
+                ${thumbnailsHTML}
+              </div>
+              <div class="product-info-box">
+                <h2>${title}</h2>
+                <div class="product-price" style="font-size: 1.5rem; color: var(--primary); font-weight: bold;">${product.price} ${currency}</div>
+                <div class="size-banner" style="margin: 0;">
+                  <i class="fa-solid fa-wand-magic-sparkles"></i>
+                  <span>${sizeNote}</span>
+                </div>
+                <p style="color: var(--text-muted); line-height: 1.8;">${desc}</p>
+                <button class="btn btn-main" style="padding: 15px 30px; font-size: 1.1rem; width: fit-content;" onclick="addToCart(${product.id})">
+                  <i class="fa-solid fa-cart-plus"></i> ${addBtn}
+                </button>
+              </div>
+            </div>
+          `;
+        }
+      }
+    });
+
+    function changeMainImage(src, el) {
+      document.getElementById('mainProductImg').src = src;
+      document.querySelectorAll('.thumb-img').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+    }
+  </script>
+</body>
+</html>

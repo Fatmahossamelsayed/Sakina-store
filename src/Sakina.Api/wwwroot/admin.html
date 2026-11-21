@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>لوحة التحكم — Sakina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .adm-bar { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:14px 0; flex-wrap:wrap; }
+    .adm-bar img { width:48px; height:48px; }
+    .tabs { display:flex; gap:8px; margin:10px 0 24px; flex-wrap:wrap; }
+    .login-box { max-width:380px; margin:70px auto; background:var(--surface-color); border:1px solid var(--border-color); border-radius:var(--radius); padding:28px; box-shadow:var(--shadow-sm); }
+    .login-box h2 { margin-bottom:16px; text-align:center; }
+    .adm-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:18px; }
+    .adm-card { background:var(--surface-color); border:1px solid var(--border-color); border-radius:var(--radius); overflow:hidden; display:flex; flex-direction:column; }
+    .adm-card.hidden-p { opacity:.55; }
+    .adm-card img { width:100%; aspect-ratio:3/4; object-fit:cover; background:var(--accent); }
+    .adm-card .body { padding:12px; display:grid; gap:6px; font-size:.9rem; }
+    .adm-card .row { display:flex; gap:8px; }
+    .adm-card .row .btn { flex:1; justify-content:center; padding:8px 6px; font-size:.8rem; }
+    .order { background:var(--surface-color); border:1px solid var(--border-color); border-radius:var(--radius); padding:16px; margin-bottom:14px; display:grid; gap:8px; }
+    .order header { display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; align-items:center; }
+    .order select { font:inherit; padding:6px 10px; border-radius:8px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); }
+    .order ul { list-style:disc; padding-inline-start:20px; color:var(--text-muted); font-size:.9rem; }
+    .imgs { display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+    .imgs .thumb { position:relative; width:64px; height:80px; }
+    .imgs .thumb img { width:100%; height:100%; object-fit:cover; border-radius:8px; }
+    .imgs .thumb button { position:absolute; top:-6px; inset-inline-start:-6px; width:20px; height:20px; border-radius:50%; border:none; background:#b5493f; color:#fff; cursor:pointer; font-size:.7rem; }
+    .field select { font:inherit; padding:11px 14px; border-radius:10px; border:1px solid var(--border-color); background:var(--bg-color); color:var(--text-main); }
+    .two { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .muted { color:var(--text-muted); }
+    [hidden] { display:none !important; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <!-- Login -->
+  <section id="loginView" class="login-box" hidden>
+    <h2>دخول الأدمن</h2>
+    <div class="field"><label for="lUser">اسم المستخدم</label><input id="lUser" autocomplete="username" dir="ltr"></div>
+    <div class="field"><label for="lPass">كلمة المرور</label><input id="lPass" type="password" autocomplete="current-password" dir="ltr"></div>
+    <p class="err" id="lErr" style="color:#b5493f;font-size:.85rem;min-height:1.2em"></p>
+    <button class="btn btn-main" id="lBtn" style="width:100%;justify-content:center">دخول</button>
+  </section>
+
+  <!-- App -->
+  <section id="appView" hidden>
+    <div class="adm-bar">
+      <div style="display:flex;align-items:center;gap:12px"><img src="images/logo.png" alt="Sakina"><h2 style="font-size:1.5rem">لوحة التحكم</h2></div>
+      <div style="display:flex;gap:8px">
+        <a href="index.html" class="btn btn-outline" target="_blank"><i class="fa-solid fa-store"></i> الموقع</a>
+        <button class="btn btn-outline" id="logout"><i class="fa-solid fa-right-from-bracket"></i> خروج</button>
+      </div>
+    </div>
+    <div class="tabs">
+      <button class="chip active" data-tab="products">المنتجات</button>
+      <button class="chip" data-tab="orders">الطلبات</button>
+    </div>
+
+    <div id="tabProducts">
+      <button class="btn btn-main" id="addP" style="margin-bottom:20px"><i class="fa-solid fa-plus"></i> إضافة منتج جديد</button>
+      <div class="adm-grid" id="pGrid"></div>
+    </div>
+    <div id="tabOrders" hidden>
+      <div class="chip-group" id="ordFilter" style="margin-bottom:18px">
+        <button class="chip active" data-s="">الكل</button>
+        <button class="chip" data-s="Pending">جديد</button>
+        <button class="chip" data-s="Confirmed">مؤكد</button>
+        <button class="chip" data-s="Shipped">اتشحن</button>
+        <button class="chip" data-s="Delivered">اتسلّم</button>
+        <button class="chip" data-s="Cancelled">ملغي</button>
+      </div>
+      <div id="oList"></div>
+    </div>
+  </section>
+</div>
+
+<div class="toast" id="toast"><i class="fa-solid fa-check-circle"></i><span id="toastMsg"></span></div>
+
+<script>
+const $ = (s, r = document) => r.querySelector(s);
+const esc = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const TAGS = { '': ['', ''], new: ['وصل حديثاً', 'New Arrival'], limited: ['كمية محدودة', 'Limited Edition'], bestseller: ['الأكثر مبيعاً', 'Best Seller'] };
+const STATUS = { Pending: 'جديد', Confirmed: 'مؤكد', Shipped: 'اتشحن', Delivered: 'اتسلّم', Cancelled: 'ملغي' };
+const CAT = { isdal: 'الإسدال', pajamas: 'البيجامات', abayas: 'العبايات', dresses: 'الفساتين' };
+let token = sessionStorage.getItem('sakina_admin') || '';
+let products = [], orderStatus = '';
+
+function toast(m) { $('#toastMsg').textContent = m; const t = $('#toast'); t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 2600); }
+
+async function api(url, opt = {}) {
+  const headers = { Authorization: 'Bearer ' + token, ...(opt.body && !(opt.body instanceof FormData) ? { 'Content-Type': 'application/json' } : {}) };
+  const res = await fetch(url, { ...opt, headers });
+  if (res.status === 401) { logout(); throw new Error('unauthorized'); }
+  if (!res.ok) { let e = ''; try { const j = await res.json(); e = j.error || Object.values(j.errors || {}).flat().join(' - '); } catch {} throw new Error(e || res.status); }
+  return res.status === 204 ? null : res.json();
+}
+
+/* ---------- Auth ---------- */
+function show(loggedIn) { $('#loginView').hidden = loggedIn; $('#appView').hidden = !loggedIn; if (loggedIn) { loadProducts(); } }
+function logout() { token = ''; sessionStorage.removeItem('sakina_admin'); show(false); }
+async function login() {
+  $('#lErr').textContent = '';
+  try {
+    const res = await fetch('/api/auth/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username: $('#lUser').value.trim(), password: $('#lPass').value }) });
+    if (!res.ok) throw new Error();
+    token = (await res.json()).token; sessionStorage.setItem('sakina_admin', token); show(true);
+  } catch { $('#lErr').textContent = 'بيانات الدخول غير صحيحة'; }
+}
+$('#lBtn').onclick = login; $('#lPass').onkeydown = (e) => e.key === 'Enter' && login(); $('#logout').onclick = logout;
+
+/* ---------- Tabs ---------- */
+document.querySelectorAll('[data-tab]').forEach(b => b.onclick = () => {
+  document.querySelectorAll('[data-tab]').forEach(x => x.classList.toggle('active', x === b));
+  $('#tabProducts').hidden = b.dataset.tab !== 'products'; $('#tabOrders').hidden = b.dataset.tab !== 'orders';
+  if (b.dataset.tab === 'orders') loadOrders();
+});
+
+/* ---------- Products ---------- */
+async function loadProducts() {
+  try { products = await api('/api/admin/products'); } catch { return; }
+  $('#pGrid').innerHTML = products.map(p => `
+    <div class="adm-card ${p.isActive ? '' : 'hidden-p'}">
+      <img src="${esc(p.images[0])}" alt="" onerror="this.style.visibility='hidden'">
+      <div class="body">
+        <strong>${esc(p.title)}</strong>
+        <span class="muted">${esc(CAT[p.category] || p.category)} · ${p.price} ج.م ${p.isActive ? '' : '· (مخفي)'}</span>
+        <div class="row">
+          <button class="btn btn-outline" data-edit="${p.id}">تعديل</button>
+          <button class="btn btn-outline" data-toggle="${p.id}">${p.isActive ? 'إخفاء' : 'إظهار'}</button>
+        </div>
+      </div>
+    </div>`).join('') || '<p class="muted">لسه مفيش منتجات.</p>';
+}
+$('#pGrid').onclick = async (e) => {
+  const ed = e.target.closest('[data-edit]'), tg = e.target.closest('[data-toggle]');
+  if (ed) return openForm(products.find(p => p.id == ed.dataset.edit));
+  if (tg) {
+    const p = products.find(x => x.id == tg.dataset.toggle);
+    try { await api('/api/admin/products/' + p.id, { method: 'PUT', body: JSON.stringify({ ...p, isActive: !p.isActive }) }); toast(p.isActive ? 'تم إخفاء المنتج' : 'تم إظهار المنتج'); loadProducts(); }
+    catch (err) { toast('حصل خطأ: ' + err.message); }
+  }
+};
+$('#addP').onclick = () => openForm(null);
+
+function openForm(p) {
+  const imgs = p ? [...p.images] : [];
+  const ov = document.createElement('div'); ov.className = 'modal-overlay';
+  ov.innerHTML = `
+    <div class="modal" style="width:min(560px,100%)" role="dialog" aria-modal="true">
+      <h3>${p ? 'تعديل المنتج' : 'إضافة منتج جديد'}</h3><p class="sub">الصور بتترفع من جهازك مباشرة، والمنتج بيظهر في الموقع فوراً.</p>
+      <div class="field"><label>القسم</label><select id="fCat">${Object.entries(CAT).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></div>
+      <div class="two">
+        <div class="field"><label>الاسم (عربي)</label><input id="fTitle" maxlength="200"></div>
+        <div class="field"><label>الاسم (إنجليزي)</label><input id="fTitleEn" maxlength="200" dir="ltr"></div>
+      </div>
+      <div class="two">
+        <div class="field"><label>السعر (ج.م)</label><input id="fPrice" type="number" min="1" inputmode="numeric" dir="ltr"></div>
+        <div class="field"><label>الشارة</label><select id="fTag"><option value="">بدون</option><option value="new">وصل حديثاً</option><option value="limited">كمية محدودة</option><option value="bestseller">الأكثر مبيعاً</option></select></div>
+      </div>
+      <div class="field"><label>الصور (أول صورة هي الأساسية)</label>
+        <input id="fFiles" type="file" accept="image/*" multiple>
+        <div class="imgs" id="fImgs"></div></div>
+      <p id="fErr" style="color:#b5493f;font-size:.85rem;min-height:1.2em"></p>
+      <div class="modal-actions"><button class="btn btn-main" id="fSave">حفظ</button><button class="btn btn-outline" id="fCancel">إلغاء</button></div>
+    </div>`;
+  document.body.appendChild(ov);
+  const g = (s) => $(s, ov);
+  if (p) { g('#fCat').value = p.category; g('#fTitle').value = p.title; g('#fTitleEn').value = p.titleEn || ''; g('#fPrice').value = p.price; g('#fTag').value = p.tag || ''; }
+  const close = () => ov.remove();
+  const paint = () => { g('#fImgs').innerHTML = imgs.map((u, i) => `<div class="thumb"><img src="${esc(u)}" alt=""><button type="button" data-rm="${i}" aria-label="حذف">✕</button></div>`).join(''); };
+  paint();
+  g('#fImgs').onclick = (e) => { const b = e.target.closest('[data-rm]'); if (b) { imgs.splice(+b.dataset.rm, 1); paint(); } };
+  g('#fCancel').onclick = close; ov.onclick = (e) => e.target === ov && close();
+
+  g('#fFiles').onchange = async (e) => {
+    g('#fErr').textContent = 'جاري رفع الصور…';
+    for (const f of e.target.files) {
+      try { const fd = new FormData(); fd.append('file', f); imgs.push((await api('/api/admin/uploads', { method: 'POST', body: fd })).url); paint(); }
+      catch (err) { g('#fErr').textContent = 'تعذّر رفع ' + f.name + ': ' + err.message; return; }
+    }
+    g('#fErr').textContent = ''; e.target.value = '';
+  };
+
+  g('#fSave').onclick = async () => {
+    const tag = g('#fTag').value;
+    const body = { category: g('#fCat').value, title: g('#fTitle').value.trim(), titleEn: g('#fTitleEn').value.trim() || null, price: +g('#fPrice').value,
+      tag: tag || null, tagName: TAGS[tag][0] || null, tagNameEn: TAGS[tag][1] || null, images: imgs, isActive: p ? p.isActive : true };
+    if (!body.title) return g('#fErr').textContent = 'اكتبي اسم المنتج';
+    if (!(body.price > 0)) return g('#fErr').textContent = 'اكتبي السعر';
+    if (!imgs.length) return g('#fErr').textContent = 'ارفعي صورة واحدة على الأقل';
+    g('#fSave').disabled = true;
+    try { await api(p ? '/api/admin/products/' + p.id : '/api/admin/products', { method: p ? 'PUT' : 'POST', body: JSON.stringify(body) }); close(); toast('تم الحفظ ✓'); loadProducts(); }
+    catch (err) { g('#fSave').disabled = false; g('#fErr').textContent = 'حصل خطأ: ' + err.message; }
+  };
+}
+
+/* ---------- Orders ---------- */
+async function loadOrders() {
+  try {
+    const list = await api('/api/admin/orders?pageSize=100' + (orderStatus ? '&status=' + orderStatus : ''));
+    $('#oList').innerHTML = list.map(o => `
+      <div class="order">
+        <header><strong dir="ltr">${esc(o.orderNumber)}</strong>
+          <select data-oid="${o.id}">${Object.entries(STATUS).map(([k, v]) => `<option value="${k}" ${k === o.status ? 'selected' : ''}>${v}</option>`).join('')}</select></header>
+        <div>${esc(o.customerName)} — <a dir="ltr" href="https://wa.me/${esc(o.phone.replace(/^0/, '20').replace(/\D/g, ''))}" target="_blank" rel="noopener">${esc(o.phone)}</a></div>
+        <div class="muted">${esc(o.address)}${o.notes ? ' — ' + esc(o.notes) : ''}</div>
+        <ul>${o.items.map(i => `<li>${esc(i.productTitle)} × ${i.quantity} — ${i.unitPrice * i.quantity} ج.م</li>`).join('')}</ul>
+        <div style="display:flex;justify-content:space-between"><strong>الإجمالي: ${o.total} ج.م</strong><span class="muted">${new Date(o.createdAt + 'Z').toLocaleString('ar-EG')}</span></div>
+      </div>`).join('') || '<p class="muted">مفيش طلبات.</p>';
+  } catch {}
+}
+$('#oList').onchange = async (e) => {
+  if (!e.target.dataset.oid) return;
+  try { await api(`/api/admin/orders/${e.target.dataset.oid}/status`, { method: 'PATCH', body: JSON.stringify({ status: e.target.value }) }); toast('تم تحديث حالة الطلب'); }
+  catch (err) { toast('حصل خطأ: ' + err.message); loadOrders(); }
+};
+$('#ordFilter').onclick = (e) => { const b = e.target.closest('[data-s]'); if (!b) return; document.querySelectorAll('#ordFilter .chip').forEach(x => x.classList.toggle('active', x === b)); orderStatus = b.dataset.s; loadOrders(); };
+
+show(!!token);
+</script>
+</body>
+</html>
